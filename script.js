@@ -12,6 +12,7 @@ const b = F.map((note, i) => {
 
 function start(i) {
     ctx = ctx || new AudioContext();
+    if (ctx.state === 'suspended') ctx.resume();
     if (on[i]) return;
 
     const o = ctx.createOscillator();
@@ -43,8 +44,8 @@ function playWhereverPointeris(event) {
         } else {
             stop(i);
         }
-        });
-    }
+    });
+}
 
     row.onpointerdown = playWhereverPointeris;
 
@@ -52,8 +53,8 @@ function playWhereverPointeris(event) {
         if (event.buttons) {
             playWhereverPointeris(event);
         }
-    };
+};
 
-    row.onpointerup = () => {
+    row.onpointerup = row.onpointercancel = () => {
         b.forEach((cloud, i) => stop(i));
-    };
+};
