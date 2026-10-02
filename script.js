@@ -1,5 +1,5 @@
-const F = [261.63, 293.63, 349.23, 392, 440, 493,88, 523,25];
-const K = "C D E F G A B C".split("");
+const F = [261.63, 293.66, 329.63, 349.23, 392, 440, 493,88, 523,25];
+const K = "C D E F G A B C".split(" ");
 let ctx;
 const on = {};
 const row = document.getElementById('row');
