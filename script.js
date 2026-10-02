@@ -34,8 +34,8 @@ function stop(i) {
 }
 
 function playWhereverPointeris(event) {
-    const hoveredElment = document.elementFromPoint(event.clientX, event.clientY);
-    const idnex = b.indexOf(hoveredElement);
+    const hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
+    const index = b.indexOf(hoveredElement);
 
     b.forEach((cloud, i) => {
         if (i == index) {
